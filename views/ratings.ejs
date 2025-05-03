@@ -39,9 +39,9 @@
 
         <button type="submit">Submit</button>
       </form>
-
+      
     </div>
-
+    
     <div class="teachers-grid">
       <% for (let i = 0; i < ratings.length; i++) { %>
         <div class="teacher-card">
@@ -50,13 +50,14 @@
             <div class="stars">
               <% for (let x = 0; x < ratings[i].rating; x++) { %>
                 ⭐
-              <% } %>
-              <% for (let x = ratings[i].rating; x < 5; x++) { %>
-                ☆
-              <% } %>
-            </div>
-            <p><strong>Comment:</strong> <%= ratings[i].comment %></p>
-            <p><em>By: <%= ratings[i].username %></em></p>
+                <% } %>
+                <% for (let x = ratings[i].rating; x < 5; x++) { %>
+                  ☆
+                  <% } %>
+                </div>
+                <p><strong>Comment:</strong> <%= ratings[i].comment %></p>
+                <p><em>By: <%= ratings[i].username %></em></p>
+                <button onclick="deleteRating('<%= ratings[i]._id %>')">Delete Rating</button>
           </div>
         </div>
       <% } %>
